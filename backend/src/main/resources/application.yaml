@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: voltcart-backend
+  datasource:
+    # SQLite needs no server; the file is created on the first start
+    url: jdbc:sqlite:${app.db-path}?foreign_keys=on
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      # one connection: SQLite allows one writer, and a checkout runs as one transaction on it
+      maximum-pool-size: 1
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/schema.sql
+      data-locations: classpath:db/seed.sql
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+
+app:
+  db-path: data/app.db
+  cors:
+    allowed-origins: http://localhost:3000
+  ai-search:
+    base-url: http://localhost:8000
+    timeout-ms: 60000
+  search:
+    # cosine similarity below which a product is not shown (measured in Chapter 5)
+    min-text-score: 0.30
+    min-image-score: 0.75
+    image-margin: 0.06
+    build-index-on-start: true

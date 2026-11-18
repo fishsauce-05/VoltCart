@@ -1,0 +1,11 @@
+fastapi==0.162.4
+uvicorn==0.54.0
+python-multipart==0.0.33
+numpy
+pillow
+fastembed==0.9.1
+faster-whisper==1.2.1
+av==16.1.0
+# tests
+pytest
+httpx

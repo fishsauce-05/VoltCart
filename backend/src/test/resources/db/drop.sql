@@ -1,0 +1,15 @@
+PRAGMA foreign_keys = OFF;
+DROP TABLE IF EXISTS payments;
+DROP TABLE IF EXISTS orderItems;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS cartItems;
+DROP TABLE IF EXISTS carts;
+DROP TABLE IF EXISTS productVectors;
+DROP TABLE IF EXISTS bluetoothHeadphones;
+DROP TABLE IF EXISTS phones;
+DROP TABLE IF EXISTS laptops;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS shops;
+DROP TABLE IF EXISTS sellers;
+DROP TABLE IF EXISTS customers;
+PRAGMA foreign_keys = ON;
